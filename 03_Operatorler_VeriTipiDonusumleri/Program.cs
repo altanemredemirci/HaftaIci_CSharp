@@ -101,14 +101,89 @@
             #endregion
 
 
-            //MANTIKSAL OPERATÖRLER(     )
-            //AND Operatörü (&&)
+            #region MANTIKSAL OPERATÖRLER
+            /* AND Operatörü (&&)
+            Bİr sorguda bir fazla şartın kontrol edilmesi ve bütün şartların sağlanması (TRUE) gerekiyor ise AND && oparatörü kullanılır.  
+
+            1.Koşul  2.Koşul      Sonuc
+                F       F           F
+                T       F           F
+                F       T           F
+                T       T           T
+
+           1.Koşul  2.Koşul      Sonuc
+                0       0           0
+                1       0           0
+                0       1           0
+                1       1           1
+
+
+            string username = "admin";
+            string password = "123";
+
+
+            bool result = username == "admin12" && password == "123" && ;
+
+
+
+            int sayi = 15;
+
+            bool cevap = sayi > 10 && sayi < 20;
+
+            Console.WriteLine("Sayı 10-20 aralığında mı:"+cevap);
+
+
             //OR Operatörü (||)
+            Bir sorguda bir fazla şartın kontrol edilmesi ve herhangi bir şartın True olaması yeterli ise OR || operator kullanılır.  
+
+            //Instagram giriş durumu : Username/Email/Phone
+            //                         Password
+
+            //string username = "admin";
+            //string email = "admin@gmail.com";
+            //string password = "123";
+
+
+            //Console.WriteLine("Username/Email:");
+            //string kullanici = Console.ReadLine();
+
+            //Console.WriteLine("Password:");
+            //string sifre = Console.ReadLine();
+
+
+            //bool login = (kullanici == username || kullanici == email) && sifre == password;
+           
+            */
+
+
+            //Kullanıcıdan bir şehir adı alınız ve almış olduğunuz şehir adı adana,mersin,hatay dan biri ise True yazılsın
+
+
+            //Değişken Tanımlama
+            
+
+            //Console.WriteLine("Şehir Giriniz:");
+            //string sehir = Console.ReadLine();
+
+            //bool cevap = sehir == "Adana" || sehir == "Mersin" || sehir == "Hatay";
+
+            //Console.WriteLine(cevap);
+            #endregion
+
 
 
             //ERİŞİM OPERATÖRÜ
 
-            Console.ReadLine().Replace()
+            //Console.ReadLine();
+
+
+            // 5 sayısının tek mi çift mi olduğunu kıyas operatörü(? :) ile ekrana yazdırınız.
+
+            //int sayi = 5;
+
+            //string cevap = sayi % 2 == 0 ? "ÇİFT SAYI" : "TEK SAYI";
+
+            //Console.WriteLine(cevap);
 
         }
     }

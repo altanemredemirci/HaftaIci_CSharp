@@ -86,6 +86,25 @@
             #endregion
 
 
+            //Kullanıcıdan iki ürün fiyatı isteyin, ürün fiyat toplamları 2500 tl geçerse ucuz ürüne  % 25 indirim uygulayınız
+
+
+
+
+
+            // Aylık geliri 40000 üstünde ise %12 vergi kesilecek,
+            // 40000 ve altında ise %9 vergi kesimi yapılarak 
+            // kullanıcıya yeni gelirini bu hesaplamalar sonucunda gösteriniz
+
+
+
+            /*  Harcanan m3 istenilecek ve 
+          0-100 harcamışsa 0.35 ile fiyatlandırılacak
+          101-250=> 0.38 üzerinde hesaplandırılacak
+          251-400=> 0.41 üzerinde 
+          401-600=> 0.42
+          600 üstü ise 120 tl indirim yapılacak ve fiyatlandırma 0.43 üzerinde verilecek
+          */
 
 
             #endregion

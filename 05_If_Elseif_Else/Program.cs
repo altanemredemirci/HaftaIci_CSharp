@@ -288,6 +288,35 @@
                 Son olarak ekrana : "Nesrin Yılmaz, Maaşınız: 40000₺" yazılacak.  
             */
 
+            Console.WriteLine("İsim:");
+            string isim = Console.ReadLine();
+
+            Console.WriteLine("Yaş:");
+            int yas = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Maaş:");
+            int maas = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Çocuk Sayısı:");
+            int cocukSayisi = Convert.ToInt32(Console.ReadLine());
+
+            if (yas < 45) 
+            {
+                if (cocukSayisi < 3)
+                {
+                    maas += cocukSayisi * 2500; // maas = maas+(cocukSayisi*2500)
+                }
+                else 
+                {
+                    maas += cocukSayisi * 2000;
+                }
+            }
+            else
+            {
+                maas += 5000;
+            }
+
+            Console.WriteLine($"Sayın {isim} Maaşınız:{maas} ");
 
             #endregion
 

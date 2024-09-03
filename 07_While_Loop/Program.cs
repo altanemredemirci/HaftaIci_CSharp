@@ -10,7 +10,7 @@
 
                 * WHILE
                 * FOR
-                * Do While
+                * DO While
                 * FOREACH
 
 
@@ -96,35 +96,107 @@
 
             #endregion
 
+            #region Örnek
+            //string sifre = "ab18";
+
+            //int hak = 3;
+
+            //while (hak > 0)
+            //{
+            //    Console.WriteLine("Şifreniz");
+            //    string sfr = Console.ReadLine();
+
+            //    if (sifre == sfr)
+            //    {
+            //        Console.WriteLine("Giriş Başarılı");
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Tekrar Deneyiniz");
+            //        hak--;
+            //    }
+            //    //hak--
+            //}
+
+            //Console.WriteLine("ANAMENÜ\n1-Para Çekme\n2-Para Yatırma");
 
 
-            string sifre = "ab18";
+            //Console.WriteLine("ANAMENÜ");
+            //Console.WriteLine("1-Para Çekme");
+            #endregion
+            #region Kullanıcıdan 0 girilene kadar pozitif sayılar istensin. 0 girilene kadar girilen her sayı toplansın ve 0 girildiğin sayı istenmesin, toplam ve ortalama ekrana yazdırılsın.
+            //** Kullanıcı ilk sayıyı 0 girerse tekrar sayı istensin
+            //** Kullanıcı negatif sayı girerse "Lütfen Pozitif Bir Sayı Giriniz!!" uyarısı verilsin.
+            //int toplam = 0;
+            //int adet = 0;
+            //while (true)
+            //{               
 
-            int hak = 3;
+            //    Console.WriteLine("Bir sayı giriniz:");
+            //    int sayi = Convert.ToInt32(Console.ReadLine());
 
-            while (hak>0)
-            {
-                Console.WriteLine("Şifreniz");
-                string sfr = Console.ReadLine();
-
-                if (sifre == sfr)
-                {
-                    Console.WriteLine("Giriş Başarılı");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Tekrar Deneyiniz");
-                    hak--;
-                }
-                //hak--
-            }
-
-            Console.WriteLine("ANAMENÜ\n1-Para Çekme\n2-Para Yatırma");
+            //    if (sayi == 0) 
+            //    {
+            //        Console.WriteLine("Toplam:" + toplam);
+            //        Console.WriteLine("Ortalama:" + (toplam/adet));
+            //        break;
+            //    }
+            //    else if (sayi < 0)
+            //    {
+            //        Console.WriteLine("Pozitif sayı giriniz!!");
+            //    }
+            //    else
+            //    {
+            //        adet++;
+            //        toplam += sayi; // toplam= toplam+sayi;
+            //    }
+            //}
 
 
-            Console.WriteLine("ANAMENÜ");
-            Console.WriteLine("1-Para Çekme");
+
+
+
+            #endregion
+            #region Kullanıcıya kayıtlı username ve şifre giriş paneli için 3 hak veriniz ve 3 hak giriş yapamaz ise sistemi 10 saniye kitleyiniz. Kullanıcıya gerekli bütün uyarıları yapınız.
+
+            //string username = "admin";
+            //string pass = "123";
+            //int hak = 3;
+            //int girisSayisi = 0;
+
+            //while (hak > 0)
+            //{
+            //    Console.WriteLine("Username:");
+            //    string kullaniciAdi = Console.ReadLine();
+            //    Console.WriteLine("Password:");
+            //    string sifre = Console.ReadLine();
+
+            //    hak--;
+            //    girisSayisi++;
+            //    if (sifre == pass && username == kullaniciAdi)
+            //    {
+            //        Console.WriteLine("Giriş Başarılı");
+            //        break;
+            //    }
+            //    else if (hak == 0)
+            //    {
+            //        Console.WriteLine("Hakkınız bitti!");
+            //        Thread.Sleep(1000*girisSayisi);
+            //        hak = 3;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Tekrar Deneyiniz");
+            //    }
+               
+            //}
+           
+
+
+
+            #endregion
+
 
         }
     }

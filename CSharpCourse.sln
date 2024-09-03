@@ -13,11 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_VeriTipiDonusumleri", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_If_Elseif_Else", "05_If_Elseif_Else\05_If_Elseif_Else.csproj", "{7FC0C4A2-2856-45EA-8C33-A8B8B7E15E5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Switch_Case", "06_Switch_Case\06_Switch_Case.csproj", "{C5575FC4-4766-441C-8B17-4D8B3D995319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_Switch_Case", "06_Switch_Case\06_Switch_Case.csproj", "{C5575FC4-4766-441C-8B17-4D8B3D995319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_While_Loop", "07_While_Loop\07_While_Loop.csproj", "{C0D5ED27-DB48-471F-91B6-7D53EB123D95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_While_Loop", "07_While_Loop\07_While_Loop.csproj", "{C0D5ED27-DB48-471F-91B6-7D53EB123D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_Bankamatik", "07_Bankamatik\07_Bankamatik.csproj", "{78DAA50D-C7C3-4181-94D6-0C1B76275A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_Bankamatik", "07_Bankamatik\07_Bankamatik.csproj", "{78DAA50D-C7C3-4181-94D6-0C1B76275A89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_For_Loop", "07_For_Loop\07_For_Loop.csproj", "{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{78DAA50D-C7C3-4181-94D6-0C1B76275A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78DAA50D-C7C3-4181-94D6-0C1B76275A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78DAA50D-C7C3-4181-94D6-0C1B76275A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

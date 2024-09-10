@@ -1,0 +1,1607 @@
+﻿
+
+int bakiye = 2500;
+string sifre = "ab18";
+string enKoraAd = "Kumarcı100";
+string enKoraSifre = "ab19";
+string krediKarti = "123456789012";
+int krediKartiBakiyesi = 9000;
+string eftHesap1 = "TR123456789012";
+string eftHesap2 = "TR123456789013";
+string havaleNumarasi1 = "12345678901";
+string havaleNumarasi2 = "12345678902";
+int elektrik = 150;
+int telefon = 160;
+int internet = 225;
+int su = 300;
+int ogs = 1000;
+string tc = "12345678907";
+string cepNo = "12345678";
+string hesapNo = "123";
+Console.WriteLine("Adınızı girin lütfen:");
+string ad = Console.ReadLine();
+
+YANLISGIRIS:
+int denemeSayisi = 0;
+int maksimumHak = 3;
+
+Console.WriteLine($"Merhaba {ad}! Lüften yapmak istediğiniz işlemi seçin:");
+Console.WriteLine("-Kartlı işlem için 1'e basın");
+Console.WriteLine("-Kartsız işlem için 2'ye basın");
+
+int islem;
+bool sayiMi = int.TryParse(Console.ReadLine(), out islem);
+if (!sayiMi || (islem != 1 && islem != 2))
+{
+    Console.WriteLine("Yanlış işlem, lütfen geçerli bir işlem seçiniz.");
+    goto YANLISGIRIS;
+}
+
+switch (islem)
+{
+    case 1:
+        while (denemeSayisi < maksimumHak)
+        {
+            Console.WriteLine("Lütfen şifrenizi giriniz:");
+            string sifreKontrol = Console.ReadLine();
+
+            if (sifreKontrol == sifre)
+            {
+                Console.WriteLine("Şifre doğru! Hoşgeldiniz!");
+                goto ANASAYFA;
+            }
+            else
+            {
+                denemeSayisi++;
+                Console.WriteLine("Şifre yanlış. Tekrar deneyiniz.");
+                Console.WriteLine($"Kalan deneme hakkınız: {maksimumHak - denemeSayisi}");
+            }
+        }
+        break;
+
+    case 2:
+    KULLANICI:
+        Console.WriteLine("Kartsız işlem yapmak istiyorsanız En Kora hesabınıza girmeniz gerekmektedir.");
+        Console.WriteLine("EnKora Kullanıcı Adınızı girin:");
+        string enKoraAdGiris = Console.ReadLine();
+        if (enKoraAdGiris == enKoraAd)
+        {
+        SIFRE:
+            Console.WriteLine("Lütfen şifrenizi giriniz:");
+            string enKoraSifreGiris = Console.ReadLine();
+            if (enKoraSifreGiris == enKoraSifre)
+            {
+                Console.WriteLine("Doğru giriş. Ana Sayfaya atılıyorsunuz.");
+                goto ANASAYFA2;
+            }
+            else
+            {
+                Console.WriteLine("Yanlış giriş. Tekrar deneyin.");
+                goto SIFRE;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Yanlış Giriş. Tekrar deneyin.");
+            goto KULLANICI;
+        }
+        break;
+}
+if (denemeSayisi == maksimumHak)
+{
+    Console.WriteLine("3 defa yanlış şifre girdiz. Lütfen tekrar deneyin, girişe atılıyorsunuz.");
+    goto YANLISGIRIS;
+}
+
+ANASAYFA:
+Console.WriteLine("-------------ANASAYFAYA HOŞGELDİNİZ-------------");
+Console.WriteLine("---Yapmak istediğiniz işlemin numarasını seçin---");
+Console.WriteLine("Para çekmek için -> 1");
+Console.WriteLine("Para yatırmak için -> 2");
+Console.WriteLine("Para transferi için -> 3");
+Console.WriteLine("Eğitim ödemeleri için -> 4");
+Console.WriteLine("Ödemeler için -> 5");
+Console.WriteLine("Bilgi Güncelleme -> 6");
+int islem2;
+bool SayiMi2 = int.TryParse(Console.ReadLine(), out islem2);
+if (!SayiMi2 || (islem2 != 1 && islem2 != 2 && islem2 != 3 && islem2 != 4 && islem2 != 5 && islem2 != 6))
+{
+    Console.WriteLine("Yanlış işlem girdiniz, lütfen geçerli bir işlem seçiniz.");
+    goto ANASAYFA;
+}
+switch (islem2)
+{
+    case 1:
+    CEKIM:
+        Console.WriteLine($"Bakiyeniz: {bakiye}");
+        Console.WriteLine("Çekmek istediğiniz miktarı girin:");
+        int paraCekim;
+        bool SayiMi3 = int.TryParse(Console.ReadLine(), out paraCekim);
+        if (!SayiMi3)
+        {
+            Console.WriteLine("Lütfen bir sayı giriniz.");
+            goto CEKIM;
+        }
+        else if (paraCekim > bakiye)
+        {
+            Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını çekemezsiniz. Tekrar deneyin.");
+            goto CEKIM;
+        }
+        else if (paraCekim <= 0)
+        {
+            Console.WriteLine("0 yada daha az bir miktar çekemezsiniz.");
+            goto CEKIM;
+        }
+        else
+        {
+            bakiye -= paraCekim;
+            Console.WriteLine($"Para çekimi başarılı! Güncel bakiyeniz: {bakiye}");
+        DONUS:
+            Console.WriteLine("Ana sayfaya dönmek için -> 9");
+            Console.WriteLine("Çıkmak için -> 0");
+
+            int islem13;
+            bool SayiMi4 = int.TryParse(Console.ReadLine(), out islem13);
+            if (!SayiMi4 || (islem13 != 0 && islem13 != 9))
+            {
+                Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                goto DONUS;
+            }
+            else if (islem13 == 9)
+            {
+                goto ANASAYFA;
+            }
+            else if (islem13 == 0)
+            {
+                Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                return;
+            }
+        }
+        break;
+
+    case 2:
+    YATIRIM:
+        Console.WriteLine("Lütfen para yatırmak istediğiniz yeri seçin:");
+        Console.WriteLine("Kredi kartına para yatırmak için -> 1");
+        Console.WriteLine("Kendi hesabınıza para yatırmak için -> 2");
+        int islem4;
+        bool sayiMi5 = int.TryParse(Console.ReadLine(), out islem4);
+        if (!sayiMi5 || (islem4 != 1 && islem4 != 2))
+        {
+            Console.WriteLine("Yanlış işlem, lütfen geçerli bir işlem seçiniz.");
+            goto YATIRIM;
+        }
+        if (islem4 == 1)
+        {
+        KART:
+            Console.WriteLine("Lütfen kredi 12 haneli kredi kartı numaranızı girin.");
+            string kartGiris = Console.ReadLine();
+            if (kartGiris != krediKarti)
+            {
+                Console.WriteLine("Yanlış giriş. Tekrar deneyiniz.");
+                goto KART;
+            }
+            else if (kartGiris == krediKarti)
+            {
+                Console.WriteLine("-Doğru giriş!-");
+                while (true)
+                {
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    Console.WriteLine("Yatırmak istediğiniz miktarı girin:");
+                    int paraYatirma;
+                    bool SayiMi6 = int.TryParse(Console.ReadLine(), out paraYatirma);
+                    if (!SayiMi6)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        continue;
+                    }
+                    else if (paraYatirma > bakiye)
+                    {
+                        Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını yatıramazsınız. Tekrar deneyin.");
+                        continue;
+                    }
+                    else if (paraYatirma <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar yatıramazsınız.");
+                        continue;
+                    }
+                    else
+                    {
+                        bakiye -= paraYatirma;
+                        krediKartiBakiyesi += paraYatirma;
+                        Console.WriteLine("Hesaptan para aktarılıyor.....");
+                        Console.WriteLine("Para yatırımı başarılı!");
+                        Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                        Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    DONUS1:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem5;
+                        bool SayiMi7 = int.TryParse(Console.ReadLine(), out islem5);
+                        if (!SayiMi7 || (islem5 != 0 && islem5 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS1;
+                        }
+                        else if (islem5 == 9)
+                        {
+                            goto ANASAYFA;
+                        }
+                        else if (islem5 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+        if (islem4 == 2)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                Console.WriteLine("Hesabınıza yatırmak istediğiniz miktarı girin:");
+                int paraYatirma1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out paraYatirma1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (paraYatirma1 > krediKartiBakiyesi)
+                {
+                    Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını yatıramazsınız. Tekrar deneyin.");
+                    continue;
+                }
+                else if (paraYatirma1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar yatıramazsınız.");
+                    continue;
+                }
+                else
+                {
+                    bakiye += paraYatirma1;
+                    krediKartiBakiyesi -= paraYatirma1;
+                    Console.WriteLine("Hesaptan para aktarılıyor.....");
+                    Console.WriteLine("Para yatırımı başarılı!");
+                    Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+
+        break;
+    case 3:
+    DON:
+        Console.WriteLine("Transfer için kullanmak istediğiniz metodu seçin:");
+        Console.WriteLine("Başka hesaba EFT için -> 1");
+        Console.WriteLine("Başka hesaba havale için -> 2");
+        int islem7;
+        bool sayiMi10 = int.TryParse(Console.ReadLine(), out islem7);
+        if (!sayiMi10 || (islem7 != 1 && islem7 != 2))
+        {
+            Console.WriteLine("Yanlış işlem, lütfen geçerli bir işlem seçiniz.");
+            goto DON;
+        }
+        if (islem7 == 1)
+        {
+        HESAP:
+            Console.WriteLine("Lütfen transfer edeceğiniz hesabın EFT numarasını girin.");
+            string eftGiris = Console.ReadLine();
+            if (eftGiris == eftHesap1)
+            {
+                Console.WriteLine("Hesap bulundu. Fakat bu hesap para transferi için uygun değil.");
+            DONUS2:
+                Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                Console.WriteLine("Çıkmak için -> 0");
+                int islem8;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out islem8);
+                if (!SayiMi8 || (islem8 != 0 && islem8 != 9))
+                {
+                    Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                    goto DONUS2;
+                }
+                else if (islem8 == 9)
+                {
+                    goto ANASAYFA;
+                }
+                else if (islem8 == 0)
+                {
+                    Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                    return;
+                }
+            }
+            else if (eftGiris == eftHesap2)
+            {
+                Console.WriteLine("Hesap bulundu!");
+                while (true)
+                {
+                    Console.WriteLine("Transfer etmek istediğiniz miktarı girin:");
+                    Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    int paraYatirma2;
+                    bool SayiMi8 = int.TryParse(Console.ReadLine(), out paraYatirma2);
+                    if (!SayiMi8)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        continue;
+                    }
+                    else if (paraYatirma2 > krediKartiBakiyesi)
+                    {
+                        Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını transfer edemezsiniz. Tekrar deneyin.");
+                        continue;
+                    }
+                    else if (paraYatirma2 <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar aktaramazsınız.");
+                        continue;
+                    }
+                    else
+                    {
+                        bakiye -= paraYatirma2;
+                        Console.WriteLine("Transfer ediliyor.....");
+                        Console.WriteLine("Para transferi başarılı!");
+                        Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    DONUS3:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem9;
+                        bool SayiMi11 = int.TryParse(Console.ReadLine(), out islem9);
+                        if (!SayiMi8 || (islem9 != 0 && islem9 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS3;
+                        }
+                        else if (islem9 == 9)
+                        {
+                            goto ANASAYFA;
+                        }
+                        else if (islem9 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (eftGiris != eftHesap1 && eftGiris != eftHesap2)
+            {
+                Console.WriteLine("Hesap bulunamadı...");
+                Console.WriteLine("Eft numarasını doğru girdiğinize ve büyük TR kulladığınızdan emin olun.");
+                goto HESAP;
+            }
+        }
+        if (islem7 == 2)
+        {
+        HESAP:
+            Console.WriteLine("Lütfen transfer için havale numarasını girin.");
+            string havaleGiris = Console.ReadLine();
+            if (havaleGiris == havaleNumarasi1)
+            {
+                Console.WriteLine("Hesap bulundu. Fakat bu hesap havale için uygun değil.");
+            DONUS3:
+                Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                Console.WriteLine("Çıkmak için -> 0");
+                int islem10;
+                bool SayiMi12 = int.TryParse(Console.ReadLine(), out islem10);
+                if (!SayiMi12 || (islem10 != 0 && islem10 != 9))
+                {
+                    Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                    goto DONUS3;
+                }
+                else if (islem10 == 9)
+                {
+                    goto ANASAYFA;
+                }
+                else if (islem10 == 0)
+                {
+                    Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                    return;
+                }
+            }
+            else if (havaleGiris == havaleNumarasi2)
+            {
+                Console.WriteLine("Hesap bulundu!");
+                while (true)
+                {
+                    Console.WriteLine("Havale etmek istediğiniz miktarı girin:");
+                    Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    int paraYatirma3;
+                    bool SayiMi8 = int.TryParse(Console.ReadLine(), out paraYatirma3);
+                    if (!SayiMi8)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        continue;
+                    }
+                    else if (paraYatirma3 > krediKartiBakiyesi)
+                    {
+                        Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını havale edemezsiniz. Tekrar deneyin.");
+                        continue;
+                    }
+                    else if (paraYatirma3 <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar aktaramazsınız.");
+                        continue;
+                    }
+                    else
+                    {
+                        bakiye -= paraYatirma3;
+                        Console.WriteLine("Havale ediliyor.....");
+                        Console.WriteLine("Havale başarılı!");
+                        Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    DONUS3:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem9;
+                        bool SayiMi11 = int.TryParse(Console.ReadLine(), out islem9);
+                        if (!SayiMi8 || (islem9 != 0 && islem9 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS3;
+                        }
+                        else if (islem9 == 9)
+                        {
+                            goto ANASAYFA;
+                        }
+                        else if (islem9 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (havaleGiris != havaleNumarasi1 && havaleGiris != havaleNumarasi2)
+            {
+                Console.WriteLine("Hesap bulunamadı...");
+                Console.WriteLine("Havale numarasını doğru girdiğinizden emin olun.");
+                goto HESAP;
+            }
+        }
+        break;
+
+    case 4:
+    DONUS4:
+        Console.WriteLine("Üzgünüz, eğitim ödemeleri sayfası şuanda bakımda.");
+        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+        Console.WriteLine("Çıkmak için -> 0");
+        int islem11;
+        bool SayiMi13 = int.TryParse(Console.ReadLine(), out islem11);
+        if (!SayiMi13 || (islem11 != 0 && islem11 != 9))
+        {
+            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+            goto DONUS4;
+        }
+        else if (islem11 == 9)
+        {
+            goto ANASAYFA;
+        }
+        else if (islem11 == 0)
+        {
+            Console.WriteLine("Sistemden çıkılıyor. Aksaklık için özğr dileriz!");
+            return;
+        }
+        break;
+
+    case 5:
+    SAYFA:
+        Console.WriteLine("Yapmak istediğiniz işlemin numarasını seçin:");
+        Console.WriteLine("Elektiril faturası -> 1");
+        Console.WriteLine("Telefon Faturası -> 2");
+        Console.WriteLine("İnternet faturası -> 3");
+        Console.WriteLine("Su Faturası -> 4");
+        Console.WriteLine("OGS Ödemeleri -> 5");
+        int islem12;
+        bool SayiMi14 = int.TryParse(Console.ReadLine(), out islem12);
+        if (!SayiMi14 || (islem12 != 1 && islem12 != 2 && islem12 != 3 && islem12 != 4 && islem12 != 5))
+        {
+            Console.WriteLine("Yanlış işlem girdiniz, lütfen geçerli bir işlem seçiniz.");
+            goto SAYFA;
+        }
+        if (islem12 == 1)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki elektrik faturanız: {elektrik}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme > elektrik)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme <= elektrik)
+                {
+                    elektrik -= faturaOdeme;
+                    krediKartiBakiyesi -= faturaOdeme;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan elektrik borcunuz: {elektrik}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 2)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki telefon faturanız: {telefon}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > telefon)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= telefon)
+                {
+                    telefon -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan telefon borcunuz: {telefon}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 3)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki internet faturanız: {internet}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > internet)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= internet)
+                {
+                    internet -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan telefon borcunuz: {internet}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 4)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki sufaturanız: {su}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > su)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= su)
+                {
+                    su -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan telefon borcunuz: {su}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 5)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki ogs faturanız: {ogs}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > ogs)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 == ogs)
+                {
+                    ogs -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan ogs borcunuz: {ogs}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        break;
+        //
+    case 6: 
+        Console.WriteLine("Şifrenizi değistirmek istediğinizden emin misiniz?");
+        Console.WriteLine("Evet ise -> 1");
+        Console.WriteLine("Hayır ise -> 2");
+        int eminlik;
+        bool sayiMi20 = int.TryParse(Console.ReadLine(), out eminlik);
+        if (!sayiMi20 || (eminlik != 1 && eminlik != 2))
+        {
+            Console.WriteLine("Yanlış işlem, lütfen geçerli bir işlem seçiniz.");
+            goto YATIRIM;
+        }
+        if (eminlik == 1)
+        {
+        DON1:
+            Console.WriteLine("Mevcut şifrenizi girin:");
+            string mevcutSifre = Console.ReadLine();
+            if (mevcutSifre == sifre)
+            {
+                Console.WriteLine("Yeni şifreyi girin:");
+                string yeniSifre = Console.ReadLine();
+                if (yeniSifre != sifre)
+                {
+                    sifre = yeniSifre;
+                    Console.WriteLine("Şifreniz değiştirildi.");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+                else if (yeniSifre == sifre)
+                {
+                    Console.WriteLine("Yeni şifre eski şifre ile aynı olamaz. Tekrar deneyin.");
+                    goto DON1;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Hatalı şifre. Tekrar deneyin");
+                goto DON1;
+            }
+        }
+        else if (eminlik == 2)
+        {
+            Console.WriteLine("Pekala!");
+        DONUS1:
+            Console.WriteLine("Ana sayfaya dönmek için -> 9");
+            Console.WriteLine("Çıkmak için -> 0");
+            int islem6;
+            bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+            if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+            {
+                Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                goto DONUS1;
+            }
+            else if (islem6 == 9)
+            {
+                goto ANASAYFA;
+            }
+            else if (islem6 == 0)
+            {
+                Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                return;
+            }
+        }
+        break;
+}
+
+ANASAYFA2:
+Console.WriteLine("-------------ENKORA ANASAYFASINA HOŞGELDİNİZ-------------");
+Console.WriteLine("---Yapmak istediğiniz işlemin numarasını seçin---");
+Console.WriteLine("EnKora bank para çekmek için -> 1");
+Console.WriteLine("Para yatırmak için -> 2");
+Console.WriteLine("Kredi kartı ödeme-> 3");
+Console.WriteLine("Eğitim ödemeleri için -> 4");
+Console.WriteLine("Ödemeler için -> 5");
+int islem3;
+bool SayiMi21 = int.TryParse(Console.ReadLine(), out islem3);
+if (!SayiMi21 || (islem3 != 1 && islem3 != 2 && islem3 != 3 && islem3 != 4 && islem3 != 5))
+{
+    Console.WriteLine("Yanlış işlem girdiniz, lütfen geçerli bir işlem seçiniz.");
+    goto ANASAYFA2;
+}
+switch (islem3)
+{
+    case 1:
+    TC:
+        Console.WriteLine("Lütfen TC kimlik numaranızı girin:");
+        string tcKontrol = Console.ReadLine();
+        if (tcKontrol == tc)
+        {
+            while (denemeSayisi < maksimumHak)
+            {
+                Console.WriteLine("Lütfen cep telefon numaranızı giriniz:");
+                Console.WriteLine("!UYARI! cep telefonu numaranızı 3ten fazla kere yanlış girerseniz hesabınız 1 saat kitlenir.");
+                string cepKontrol = Console.ReadLine();
+
+                if (cepKontrol == cepNo)
+                {
+                    Console.WriteLine("Şifre doğru! 1000TL KAZANDINIZ!");
+                    bakiye += 1000;
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA2;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+                else
+                {
+                    denemeSayisi++;
+                    Console.WriteLine("Şifre yanlış. Tekrar deneyiniz.");
+                    Console.WriteLine($"Kalan deneme hakkınız: {maksimumHak - denemeSayisi}");
+                    if (denemeSayisi >= maksimumHak)
+                    {
+                        Console.WriteLine("Giriş kitlendi. Bir saat sonra tekrar deneyin.");
+                        Thread.Sleep(3600000);
+                        break;
+                    }
+
+                }
+            }
+        }
+        else if (tcKontrol != tc)
+        {
+            Console.WriteLine("Hatalı Giriş. Tekrar deneyin.");
+            goto TC;
+        }
+        break;
+
+    case 2:
+    DON4:
+        Console.WriteLine("Yapmak istediğiniz işlemi seçin lütfen:");
+        Console.WriteLine("Nakit ödeme -> 1");
+        Console.WriteLine("Hesaptan ödeme -> 2");
+        int islem7;
+        bool sayiMi10 = int.TryParse(Console.ReadLine(), out islem7);
+        if (!sayiMi10 || (islem7 != 1 && islem7 != 2))
+        {
+            Console.WriteLine("Yanlış işlem, lütfen geçerli bir işlem seçiniz.");
+            goto DON4;
+        }
+        if (islem7 == 1)
+        {
+        DON5:
+            Console.WriteLine("Lütfen kart numaranızı girin:");
+            string kartKontrol = Console.ReadLine();
+            if (kartKontrol != krediKarti)
+            {
+                Console.WriteLine("Yanlış numara. Tekrar deneyin.");
+                goto DON5;
+            }
+            else if (kartKontrol == krediKarti)
+            {
+            DON6:
+                Console.WriteLine("TC kimlik numaranızı girniz:");
+                string tcKontrol1 = Console.ReadLine();
+                if (tcKontrol1 == tc && tcKontrol1.Length == 11)
+                {
+                NAKİT:
+                    Console.WriteLine("Nakit çekmez istediğiniz miktarı girin:");
+                    Console.WriteLine($"Güncel kart bakiyeniz {krediKartiBakiyesi}");
+                    int nakit1;
+                    bool SayiMi8 = int.TryParse(Console.ReadLine(), out nakit1);
+                    if (!SayiMi8)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        goto NAKİT;
+                    }
+                    else if (nakit1 > krediKartiBakiyesi)
+                    {
+                        Console.WriteLine("Var olan bakiyenizden daha büyük bir miktar nakit çekemzsiniz.");
+                    }
+                    else if (nakit1 <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                        goto NAKİT;
+                    }
+                    else if (nakit1 <= krediKartiBakiyesi)
+                    {
+
+                        krediKartiBakiyesi -= nakit1;
+                        Console.WriteLine("Nakit çekiliyor.....");
+                        Console.WriteLine("Başarılı!");
+                        Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    DONUS1:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem6;
+                        bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                        if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS1;
+                        }
+                        else if (islem6 == 9)
+                        {
+                            goto ANASAYFA2;
+                        }
+                        else if (islem6 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                    }
+                }
+                else if (tcKontrol1 != tc)
+                {
+                    Console.WriteLine("Yanlış giriş. tekrar deneyin.");
+                    goto DON6;
+                }
+            }
+        }
+        else if (islem7 == 2)
+        {
+        DON5:
+            Console.WriteLine("Lütfen kart numaranızı girin:");
+            string kartKontrol = Console.ReadLine();
+            if (kartKontrol != krediKarti)
+            {
+                Console.WriteLine("Yanlış hesap numarası. Tekrar deneyin.");
+                goto DON5;
+            }
+            else if (kartKontrol == krediKarti)
+            {
+            DON6:
+                Console.WriteLine("Bir hesap numarası girin:");
+                string hesapKontrol = Console.ReadLine();
+                if (hesapKontrol == hesapNo)
+                {
+                NAKİT:
+                    Console.WriteLine("Göndermek istediğiniz miktarı girin:");
+                    Console.WriteLine($"Güncel kart bakiyeniz {krediKartiBakiyesi}");
+                    int nakit1;
+                    bool SayiMi8 = int.TryParse(Console.ReadLine(), out nakit1);
+                    if (!SayiMi8)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        goto NAKİT;
+                    }
+                    else if (nakit1 > krediKartiBakiyesi)
+                    {
+                        Console.WriteLine("Var olan bakiyenizden daha büyük bir miktar gönderemezsiniz.");
+                    }
+                    else if (nakit1 <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar gönderemezsiniz.");
+                        goto NAKİT;
+                    }
+                    else if (nakit1 <= krediKartiBakiyesi)
+                    {
+
+                        krediKartiBakiyesi -= nakit1;
+                        Console.WriteLine("Para gönderiliyor.....");
+                        Console.WriteLine("Başarılı!");
+                        Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    DONUS1:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem6;
+                        bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                        if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS1;
+                        }
+                        else if (islem6 == 9)
+                        {
+                            goto ANASAYFA;
+                        }
+                        else if (islem6 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                    }
+                }
+                else if (hesapKontrol != hesapNo)
+                {
+                    Console.WriteLine("Yanlış giriş. Tekrar deneyin.");
+                    goto DON6;
+                }
+            }
+        }
+        break;
+
+    case 3:
+    DON:
+        Console.WriteLine("Transfer için kullanmak istediğiniz metodu seçin:");
+        Console.WriteLine("Başka hesaba EFT için -> 1");
+        Console.WriteLine("Başka hesaba havale için -> 2");
+        int islem8;
+        bool sayiMi21 = int.TryParse(Console.ReadLine(), out islem8);
+        if (!sayiMi21 || (islem8 != 1 && islem8 != 2))
+        {
+            Console.WriteLine("Yanlış işlem, lütfen geçerli bir işlem seçiniz.");
+            goto DON;
+        }
+        if (islem8 == 1)
+        {
+        HESAP:
+            Console.WriteLine("Lütfen transfer edeceğiniz hesabın EFT numarasını girin.");
+            string eftGiris = Console.ReadLine();
+            if (eftGiris == eftHesap1)
+            {
+                Console.WriteLine("Hesap bulundu. Fakat bu hesap para transferi için uygun değil.");
+            DONUS2:
+                Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                Console.WriteLine("Çıkmak için -> 0");
+                int islem9;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out islem9);
+                if (!SayiMi8 || (islem9 != 0 && islem9 != 9))
+                {
+                    Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                    goto DONUS2;
+                }
+                else if (islem9 == 9)
+                {
+                    goto ANASAYFA2;
+                }
+                else if (islem9 == 0)
+                {
+                    Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                    return;
+                }
+            }
+            else if (eftGiris == eftHesap2)
+            {
+                Console.WriteLine("Hesap bulundu!");
+                while (true)
+                {
+                    Console.WriteLine("Transfer etmek istediğiniz miktarı girin:");
+                    Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    int paraYatirma2;
+                    bool SayiMi8 = int.TryParse(Console.ReadLine(), out paraYatirma2);
+                    if (!SayiMi8)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        continue;
+                    }
+                    else if (paraYatirma2 > krediKartiBakiyesi)
+                    {
+                        Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını transfer edemezsiniz. Tekrar deneyin.");
+                        continue;
+                    }
+                    else if (paraYatirma2 <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar aktaramazsınız.");
+                        continue;
+                    }
+                    else
+                    {
+                        bakiye -= paraYatirma2;
+                        Console.WriteLine("Transfer ediliyor.....");
+                        Console.WriteLine("Para transferi başarılı!");
+                        Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    DONUS3:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem9;
+                        bool SayiMi11 = int.TryParse(Console.ReadLine(), out islem9);
+                        if (!SayiMi8 || (islem9 != 0 && islem9 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS3;
+                        }
+                        else if (islem9 == 9)
+                        {
+                            goto ANASAYFA2;
+                        }
+                        else if (islem9 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (eftGiris != eftHesap1 && eftGiris != eftHesap2)
+            {
+                Console.WriteLine("Hesap bulunamadı...");
+                Console.WriteLine("Eft numarasını doğru girdiğinize ve büyük TR kulladığınızdan emin olun.");
+                goto HESAP;
+            }
+        }
+        if (islem8 == 2)
+        {
+        HESAP:
+            Console.WriteLine("Lütfen transfer için havale numarasını girin.");
+            string havaleGiris = Console.ReadLine();
+            if (havaleGiris == havaleNumarasi1)
+            {
+                Console.WriteLine("Hesap bulundu. Fakat bu hesap havale için uygun değil.");
+            DONUS3:
+                Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                Console.WriteLine("Çıkmak için -> 0");
+                int islem10;
+                bool SayiMi12 = int.TryParse(Console.ReadLine(), out islem10);
+                if (!SayiMi12 || (islem10 != 0 && islem10 != 9))
+                {
+                    Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                    goto DONUS3;
+                }
+                else if (islem10 == 9)
+                {
+                    goto ANASAYFA2;
+                }
+                else if (islem10 == 0)
+                {
+                    Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                    return;
+                }
+            }
+            else if (havaleGiris == havaleNumarasi2)
+            {
+                Console.WriteLine("Hesap bulundu!");
+                while (true)
+                {
+                    Console.WriteLine("Havale etmek istediğiniz miktarı girin:");
+                    Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    int paraYatirma3;
+                    bool SayiMi8 = int.TryParse(Console.ReadLine(), out paraYatirma3);
+                    if (!SayiMi8)
+                    {
+                        Console.WriteLine("Lütfen bir sayı giriniz.");
+                        continue;
+                    }
+                    else if (paraYatirma3 > krediKartiBakiyesi)
+                    {
+                        Console.WriteLine("Bakiyenizde olan miktardan daha fazlasını havale edemezsiniz. Tekrar deneyin.");
+                        continue;
+                    }
+                    else if (paraYatirma3 <= 0)
+                    {
+                        Console.WriteLine("0 yada daha az bir miktar aktaramazsınız.");
+                        continue;
+                    }
+                    else
+                    {
+                        bakiye -= paraYatirma3;
+                        Console.WriteLine("Havale ediliyor.....");
+                        Console.WriteLine("Havale başarılı!");
+                        Console.WriteLine($"Güncel hesap bakiyeniz: {bakiye}");
+                    DONUS3:
+                        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                        Console.WriteLine("Çıkmak için -> 0");
+                        int islem9;
+                        bool SayiMi11 = int.TryParse(Console.ReadLine(), out islem9);
+                        if (!SayiMi8 || (islem9 != 0 && islem9 != 9))
+                        {
+                            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                            goto DONUS3;
+                        }
+                        else if (islem9 == 9)
+                        {
+                            goto ANASAYFA2;
+                        }
+                        else if (islem9 == 0)
+                        {
+                            Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                            return;
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (havaleGiris != havaleNumarasi1 && havaleGiris != havaleNumarasi2)
+            {
+                Console.WriteLine("Hesap bulunamadı...");
+                Console.WriteLine("Havale numarasını doğru girdiğinizden emin olun.");
+                goto HESAP;
+            }
+        }
+        break;
+    case 4:
+    DONUS4:
+        Console.WriteLine("Üzgünüz, eğitim ödemeleri sayfası şuanda bakımda.");
+        Console.WriteLine("Ana sayfaya dönmek için -> 9");
+        Console.WriteLine("Çıkmak için -> 0");
+        int islem11;
+        bool SayiMi13 = int.TryParse(Console.ReadLine(), out islem11);
+        if (!SayiMi13 || (islem11 != 0 && islem11 != 9))
+        {
+            Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+            goto DONUS4;
+        }
+        else if (islem11 == 9)
+        {
+            goto ANASAYFA2;
+        }
+        else if (islem11 == 0)
+        {
+            Console.WriteLine("Sistemden çıkılıyor. Aksaklık için özğr dileriz!");
+            return;
+        }
+        break;
+
+    case 5:
+    SAYFA:
+        Console.WriteLine("Yapmak istediğiniz işlemin numarasını seçin:");
+        Console.WriteLine("Elektiril faturası -> 1");
+        Console.WriteLine("Telefon Faturası -> 2");
+        Console.WriteLine("İnternet faturası -> 3");
+        Console.WriteLine("Su Faturası -> 4");
+        Console.WriteLine("OGS Ödemeleri -> 5");
+        int islem12;
+        bool SayiMi14 = int.TryParse(Console.ReadLine(), out islem12);
+        if (!SayiMi14 || (islem12 != 1 && islem12 != 2 && islem12 != 3 && islem12 != 4 && islem12 != 5))
+        {
+            Console.WriteLine("Yanlış işlem girdiniz, lütfen geçerli bir işlem seçiniz.");
+            goto SAYFA;
+        }
+        if (islem12 == 1)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki elektrik faturanız: {elektrik}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme > elektrik)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme <= elektrik)
+                {
+                    elektrik -= faturaOdeme;
+                    krediKartiBakiyesi -= faturaOdeme;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan elektrik borcunuz: {elektrik}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA2;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 2)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki telefon faturanız: {telefon}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > telefon)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= telefon)
+                {
+                    telefon -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan telefon borcunuz: {telefon}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA2;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 3)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki internet faturanız: {internet}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > internet)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= internet)
+                {
+                    internet -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan telefon borcunuz: {internet}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA2;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 4)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki sufaturanız: {su}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > su)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= su)
+                {
+                    su -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan telefon borcunuz: {su}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA2;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        if (islem12 == 5)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Bu ay ki ogs faturanız: {ogs}");
+                Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                Console.WriteLine("Ödemek istediğiniz miktarı girin:");
+                int faturaOdeme1;
+                bool SayiMi8 = int.TryParse(Console.ReadLine(), out faturaOdeme1);
+                if (!SayiMi8)
+                {
+                    Console.WriteLine("Lütfen bir sayı giriniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 > ogs)
+                {
+                    Console.WriteLine("Var olan faturanızdan daha büyük bir rakam ödeyemezsiniz. Tekrar deneyin.");
+                    continue;
+                }
+                else if (faturaOdeme1 <= 0)
+                {
+                    Console.WriteLine("0 yada daha az bir miktar ödeyemezsiniz.");
+                    continue;
+                }
+                else if (faturaOdeme1 == ogs)
+                {
+                    ogs -= faturaOdeme1;
+                    krediKartiBakiyesi -= faturaOdeme1;
+                    Console.WriteLine("Borç Ödeniyor.....");
+                    Console.WriteLine("Ödeme başarılı!");
+                    Console.WriteLine($"Güncel kart bakiyeniz: {krediKartiBakiyesi}");
+                    Console.WriteLine($"Kalan ogs borcunuz: {ogs}");
+                DONUS1:
+                    Console.WriteLine("Ana sayfaya dönmek için -> 9");
+                    Console.WriteLine("Çıkmak için -> 0");
+                    int islem6;
+                    bool SayiMi9 = int.TryParse(Console.ReadLine(), out islem6);
+                    if (!SayiMi9 || (islem6 != 0 && islem6 != 9))
+                    {
+                        Console.WriteLine("Lütfen 0 ya da 9 rakamlarından birini seçin.");
+                        goto DONUS1;
+                    }
+                    else if (islem6 == 9)
+                    {
+                        goto ANASAYFA2;
+                    }
+                    else if (islem6 == 0)
+                    {
+                        Console.WriteLine("Sistemden çıkılıyor. İyi Günler dileriz!");
+                        return;
+                    }
+                }
+            }
+        }
+        break;
+}

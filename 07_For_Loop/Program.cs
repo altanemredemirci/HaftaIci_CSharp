@@ -7,7 +7,7 @@
             //1-10 arasındaki sayıları ekrana yazdırın.
 
             //int i = 1;
-            //while (i<11)
+            //while (i < 11)
             //{
             //    Console.WriteLine(i);
             //    i++;
@@ -56,30 +56,30 @@
 
             #region Ekrana kullanıcıdan alınan başlangıç ve bitiş değeri arasındaki 3'ün katları olan sayıları yazdırınız
 
-            //Console.WriteLine("Başlangıç Değeri:");
-            //int basla = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("Bitiş Değeri:");
-            //int bitis = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Başlangıç Değeri:");
+            int basla = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Bitiş Değeri:");
+            int bitis = Convert.ToInt32(Console.ReadLine());
 
-            //if (basla > bitis)
-            //{
-            //    int takas = basla;
-            //    basla = bitis;
-            //    bitis = takas;
+            if (basla > bitis)
+            {
+                int takas = basla;
+                basla = bitis;
+                bitis = takas;
 
-            //}
-            //int adet = 0;
-            //for (int i = basla; i < bitis; i++)
-            //{
-            //    if (i % 3 == 0)
-            //    {
-            //        adet++;
-            //        Console.WriteLine(i);
-            //    }
+            }
+            int adet = 0;
+            for (int i = basla; i < bitis; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    adet++;
+                    Console.WriteLine(i);
+                }
 
-            //}
+            }
 
-            //Console.WriteLine("Adet:"+adet);
+            Console.WriteLine("Adet:" + adet);
 
 
 
@@ -91,16 +91,16 @@
             #region Kullanıcıdan alınan bir sayının faktörüyeli hesaplayan for döngüsünü yazınız.
             // 5 => 1*2*3*4*5=120
 
-            Console.WriteLine("Faktöriyeli hesaplanacak sayı:");
-            int sayi = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Faktöriyeli hesaplanacak sayı:");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
 
-            int faktoriyel = 1;
-            for (int i = 1; i <= sayi; i++)
-            {
-                faktoriyel *= i; // faktoriyel=faktoriyel*i;
-            }
+            //int faktoriyel = 1; //1,2,3,4,5,6=720
+            //for (int i = 1; i <= sayi; i++)
+            //{
+            //    faktoriyel *= i; // faktoriyel=faktoriyel*i;
+            //}
 
-            Console.WriteLine("Sonuç:"+faktoriyel);
+            //Console.WriteLine("Sonuç:"+faktoriyel);
 
             #endregion
         }

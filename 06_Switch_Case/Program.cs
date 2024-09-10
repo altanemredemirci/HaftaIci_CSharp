@@ -49,8 +49,8 @@
             //switch (gun) //kontrol edilecek değişken
             //{
             //    case 1:
-            //        Console.WriteLine("Pazartesi");                    
-            //        break; //kırmak             
+            //        Console.WriteLine("Pazartesi");
+            //        break;         
             //    case 2:
             //        Console.WriteLine("Salı");
             //        break;
@@ -68,6 +68,9 @@
             //        break;
             //    case 7:
             //        Console.WriteLine("Pazar");
+            //        break;
+            //    case 8:
+            //        Console.WriteLine("asdasd");
             //        break;
             //    default:
             //        Console.WriteLine("Hafta 7 günden oluşur!!!");

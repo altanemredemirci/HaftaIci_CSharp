@@ -15,15 +15,15 @@
 
 
             ********* WHILE ***********
-            
-            int i = 1;                  //sayac
-            while (i < 6) //koşul
-            {
-                Console.WriteLine(i); //kod bloğu
-                i++;                   //step
-            }
-            
+            */
+            //int i = 1;                  //sayac
+            //while (i < 6) //koşul
+            //{
+            //    Console.WriteLine(i); //kod bloğu
+            //    i++;                   //step
+            //}
 
+            /*
             ** BREAK: Okunduğu satırda döngüyü kırar.
             ** CONTINUE : Okunduğu satırdan döngü koşuluna geri dönmeyi sağlar.
 
@@ -38,23 +38,25 @@
             //Console.WriteLine(5);
 
 
-
+            
             int i = 1;
             while (i < 6)
             {
-                Console.WriteLine(i);
+                
                 //if (i == 3)
                 //{
                 //    break;
                 //}
 
-                if (i == 4)
-                {
-                    continue;
-                }
-
+                //if (i == 4)
+                //{
+                //    i++;
+                //    continue;
+                //}
+                Console.WriteLine(i);
                 i++; //i=i+1;  i+=1
             }
+            
                */
             #region 200 den başlayarak 0 a kadar olan sayıları ekrana yazdırınız.
 
@@ -75,7 +77,9 @@
             //    if (i % 3 == 0)
             //    {
             //        Console.WriteLine(i);
-            //    }                
+            //    }
+
+
             //    i--;
             //}
 
@@ -84,15 +88,15 @@
             #region 1 ile 5 arasındaki sayıların toplamını ekrana yazdırınız
 
             //int i = 1;
-            //int toplam = 0;
 
+            //int toplam = 0;
             //while (i < 6)
             //{
-            //    toplam = toplam + i;
+            //    toplam= toplam+i;
             //    i++;
             //}
-
             //Console.WriteLine("Toplam:"+toplam);
+
 
             #endregion
 
@@ -125,21 +129,22 @@
             //Console.WriteLine("ANAMENÜ");
             //Console.WriteLine("1-Para Çekme");
             #endregion
+
             #region Kullanıcıdan 0 girilene kadar pozitif sayılar istensin. 0 girilene kadar girilen her sayı toplansın ve 0 girildiğin sayı istenmesin, toplam ve ortalama ekrana yazdırılsın.
             //** Kullanıcı ilk sayıyı 0 girerse tekrar sayı istensin
             //** Kullanıcı negatif sayı girerse "Lütfen Pozitif Bir Sayı Giriniz!!" uyarısı verilsin.
             //int toplam = 0;
             //int adet = 0;
-            //while (true)
-            //{               
+            //while (true) //Sonsuz Döngü
+            //{
 
             //    Console.WriteLine("Bir sayı giriniz:");
             //    int sayi = Convert.ToInt32(Console.ReadLine());
 
-            //    if (sayi == 0) 
+            //    if (sayi == 0)
             //    {
             //        Console.WriteLine("Toplam:" + toplam);
-            //        Console.WriteLine("Ortalama:" + (toplam/adet));
+            //        Console.WriteLine("Ortalama:" + (toplam / adet));
             //        break;
             //    }
             //    else if (sayi < 0)
@@ -182,16 +187,16 @@
             //    else if (hak == 0)
             //    {
             //        Console.WriteLine("Hakkınız bitti!");
-            //        Thread.Sleep(1000*girisSayisi);
+            //        Thread.Sleep(1000 * girisSayisi);
             //        hak = 3;
             //    }
             //    else
             //    {
             //        Console.WriteLine("Tekrar Deneyiniz");
             //    }
-               
+
             //}
-           
+
 
 
 

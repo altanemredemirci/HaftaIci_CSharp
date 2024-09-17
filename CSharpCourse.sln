@@ -19,7 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_While_Loop", "07_While_L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_Bankamatik", "07_Bankamatik\07_Bankamatik.csproj", "{78DAA50D-C7C3-4181-94D6-0C1B76275A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_For_Loop", "07_For_Loop\07_For_Loop.csproj", "{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_For_Loop", "07_For_Loop\07_For_Loop.csproj", "{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_DoWhile_Loop", "07_DoWhile_Loop\07_DoWhile_Loop.csproj", "{A64170D1-45A2-497B-89F0-B679146B7FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Random", "08_Random\08_Random.csproj", "{43F399CA-6B7B-4086-8798-2DB8E669ED79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Try_Catch", "09_Try_Catch\09_Try_Catch.csproj", "{A1414E90-CBAC-48B0-BFD6-88EA87680BD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F37E7B1-92E7-47B1-90F7-9B61A29FD74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A64170D1-45A2-497B-89F0-B679146B7FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64170D1-45A2-497B-89F0-B679146B7FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64170D1-45A2-497B-89F0-B679146B7FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64170D1-45A2-497B-89F0-B679146B7FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F399CA-6B7B-4086-8798-2DB8E669ED79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F399CA-6B7B-4086-8798-2DB8E669ED79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F399CA-6B7B-4086-8798-2DB8E669ED79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F399CA-6B7B-4086-8798-2DB8E669ED79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1414E90-CBAC-48B0-BFD6-88EA87680BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1414E90-CBAC-48B0-BFD6-88EA87680BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1414E90-CBAC-48B0-BFD6-88EA87680BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1414E90-CBAC-48B0-BFD6-88EA87680BD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

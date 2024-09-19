@@ -62,7 +62,39 @@
             // Sayı alma işlemi try-catch ile hatalardan arındırılacak.
             // Diyelim ki 1.sayı doğru 2.sayı hatalı tekrar 1.sayı istenmesin
             #endregion
+            int sayi1 = 0;
+            int sayi2 = 0;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("birinci sayıyı girin:");
+                    sayi1 = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("rakam giriniz");
 
+                }
+            }
+
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("ikinci sayıyı girin:");
+                    sayi2 = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("rakam giriniz");
+
+                }
+            }
+
+            Console.WriteLine("Toplam:"+(sayi1+sayi2));
         }
     }
 }

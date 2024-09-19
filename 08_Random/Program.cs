@@ -17,6 +17,36 @@
             Random random = new Random();
 
             int rastgele = random.Next(1, 100);
+            Console.WriteLine(rastgele);
+            int hak = 5;
+
+            do
+            {
+                Console.WriteLine("Tahmininiz:");
+                int tahmin = Convert.ToInt32(Console.ReadLine());
+
+                if(tahmin<100 && tahmin > 0)
+                {
+                    hak--;
+
+                    if (tahmin == rastgele)
+                    {
+                        Console.WriteLine("Tebrikler.");
+                        break;
+                    }
+                    else if (tahmin > rastgele)
+                    {
+                        Console.WriteLine("Tahmininizi Küçültünüz.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tahmininizi Büyültünüz.");
+                    }
+                }           
+
+
+            } while (hak>0);
+
 
         }
     }

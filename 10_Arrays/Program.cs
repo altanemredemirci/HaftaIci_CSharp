@@ -58,6 +58,7 @@ namespace _10_Arrays
             //    Console.WriteLine(isimler[i]);
             //}
 
+
             //FOREACH: Koleksiyon içindeki değerleri okumaya yarar.
             //foreach (string item in isimler) //string item="Altan";
             //{
@@ -192,7 +193,7 @@ namespace _10_Arrays
 
             #endregion
 
-           
+
             #endregion
 
             //Aşağıda tanımlı olan dizideki bütün BAHİR değerlerinin index değerlerini ekrana yazdırınız.
@@ -229,15 +230,48 @@ namespace _10_Arrays
             //Console.WriteLine("Tur Sayısı:" + count);
 
 
+            /*
+            PAZAR SABAH 10:00
+             Bir dizinin eleman sayısı 10 ile 20 arasında olacak şekilde sistem tarafında otomatik atılmaktadır.
+            //Bu dizinin elemanlarını da sistem 0,100 arasında otomatik atmaktadır.
+            //Otomatik oluşturulan bu dizinin eleman sayısını ve elemanlarını kullanıcıya gösteriniz
+            //Aynı sayılar tekrar atanmayacak
+            //Dizideki en büyük ve en küçük sayılar sort() kullanılmadan bulup ekrana yazdırılacak                           
+             */
 
+            Random r = new Random();
+            int[] sayilar = new int[r.Next(10, 20)];
+            Console.WriteLine("Dizi Uzunluğu:" + sayilar.Length);
 
+            int i = 0;
+            while(i<sayilar.Length)
+            {
+                int sayi = r.Next(1, 25);
+                #region Other
+                //if (!sayilar.Contains(sayi)) // False ! => TRUE
+                //{
+                //    sayilar[i] = sayi;
+                //    i++;
+                //}
 
+                //if (Array.Exists(sayilar,s => s==sayi)==false) // => lambda operatörü. İleri sorgulama teknikleri LINQ
+                //{
+                //    sayilar[i] = sayi;
+                //    i++;
+                //}
+                #endregion
 
+                if (Array.IndexOf(sayilar,sayi)==-1) // False ! => TRUE
+                {
+                    sayilar[i] = sayi;
+                    i++;
+                }
+            }
 
-
-            //RESIZE()
-
-
+            foreach (var item in sayilar)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

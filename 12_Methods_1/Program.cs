@@ -9,6 +9,8 @@
             DortIslem dortIslem = new DortIslem();
             dortIslem.DortIslemMetot();
 
+
+          
             Console.WriteLine("Metot Sonrası...");
 
         }

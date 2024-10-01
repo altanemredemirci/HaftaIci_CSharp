@@ -37,11 +37,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Methods_1", "12_Methods_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Methods_2", "12_Methods_2\12_Methods_2.csproj", "{3DC5E15D-25C9-47BC-9CE5-4FD2369EBCC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_Otomat_Makinesi_1", "11_Otomat_Makinesi_1\11_Otomat_Makinesi_1.csproj", "{192B4EED-992B-48A4-BDE0-5B55A0B77BB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_Otomat_Makinesi_1", "11_Otomat_Makinesi_1\11_Otomat_Makinesi_1.csproj", "{192B4EED-992B-48A4-BDE0-5B55A0B77BB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_3", "12_Methods_3\12_Methods_3.csproj", "{F569351B-3F59-46A7-BA84-7ED01DADC212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Methods_3", "12_Methods_3\12_Methods_3.csproj", "{F569351B-3F59-46A7-BA84-7ED01DADC212}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_4", "12_Methods_4\12_Methods_4.csproj", "{EAF840FE-BDF9-4ECE-A038-E135F9331FF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Methods_4", "12_Methods_4\12_Methods_4.csproj", "{EAF840FE-BDF9-4ECE-A038-E135F9331FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_5", "12_Methods_5\12_Methods_5.csproj", "{DE669398-954D-40CA-87D0-5FD766E803DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_6", "12_Methods_6\12_Methods_6.csproj", "{DF8A85F6-9DC0-4DA8-9AE1-13AFE793870F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_7", "12_Methods_7\12_Methods_7.csproj", "{024319A2-FF24-4405-BBD1-98ECA5F69E2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_8", "12_Methods_8\12_Methods_8.csproj", "{96ADBA2D-BA8E-4B11-9CC3-B4FFE92711C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Methods_9", "12_Methods_9\12_Methods_9.csproj", "{52B5BB75-A947-45C8-8F32-BE83B12F9FD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +139,26 @@ Global
 		{EAF840FE-BDF9-4ECE-A038-E135F9331FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF840FE-BDF9-4ECE-A038-E135F9331FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF840FE-BDF9-4ECE-A038-E135F9331FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE669398-954D-40CA-87D0-5FD766E803DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE669398-954D-40CA-87D0-5FD766E803DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE669398-954D-40CA-87D0-5FD766E803DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE669398-954D-40CA-87D0-5FD766E803DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8A85F6-9DC0-4DA8-9AE1-13AFE793870F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8A85F6-9DC0-4DA8-9AE1-13AFE793870F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8A85F6-9DC0-4DA8-9AE1-13AFE793870F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8A85F6-9DC0-4DA8-9AE1-13AFE793870F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024319A2-FF24-4405-BBD1-98ECA5F69E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024319A2-FF24-4405-BBD1-98ECA5F69E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024319A2-FF24-4405-BBD1-98ECA5F69E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024319A2-FF24-4405-BBD1-98ECA5F69E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96ADBA2D-BA8E-4B11-9CC3-B4FFE92711C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96ADBA2D-BA8E-4B11-9CC3-B4FFE92711C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96ADBA2D-BA8E-4B11-9CC3-B4FFE92711C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96ADBA2D-BA8E-4B11-9CC3-B4FFE92711C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B5BB75-A947-45C8-8F32-BE83B12F9FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B5BB75-A947-45C8-8F32-BE83B12F9FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B5BB75-A947-45C8-8F32-BE83B12F9FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B5BB75-A947-45C8-8F32-BE83B12F9FD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

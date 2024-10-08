@@ -155,16 +155,25 @@ namespace _13_ArrayList_1
             //    Console.WriteLine(item);
             //}
 
-
-
-
-           
-
-
-
-
             #endregion
 
+            // Kullanıcıdan sayı isteyelim Sayı verdiği sürece toplama yapalım sayı yerine çık yazarsa toplama işlemi bitsin sonuc yazdırılsın.
+
+            int toplam = 0;
+            ArrayList arrayList = new ArrayList();
+            while (true)
+            {
+                Console.WriteLine("Bir sayı giriniz:");
+                string deger = Console.ReadLine();
+                if (deger == "çık")
+                    break;
+
+                int sayi = Convert.ToInt32(deger);
+                arrayList.Add(sayi);
+                toplam +=sayi;
+            }
+
+            Console.WriteLine("Toplam:"+toplam);
 
             #endregion
         }

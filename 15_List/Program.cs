@@ -17,7 +17,7 @@ namespace _15_List
             //sayilar.Add(11);
             //sayilar.Add(12);
 
-            //List<string> isimler = new List<string>(){"Ecem","İsmail","Merve","Ebubekir"};
+            //List<string> isimler = new List<string>() { "Ecem", "İsmail", "Merve", "Ebubekir" };
 
             //foreach (string item in isimler)
             //{
@@ -28,9 +28,27 @@ namespace _15_List
 
             //Ogrenci bir classtır.
             //ogrenci bir objectdir.
-            Ogrenci ogrenci = new Ogrenci();  //Instance - Örenklem
+            Ogrenci ogrenci = new Ogrenci();  //Instance - Örneklem
 
-            ogrenci.Ad="Altan";
+            ogrenci.Ad = "Altan";
+            ogrenci.Soyad = "Demirci";
+            ogrenci.Numara = 154;
+
+            List<Ogrenci> ogrenciler = new List<Ogrenci>();
+
+            ogrenciler.Add(ogrenci);
+
+            Ogrenci ogrenci2 = new Ogrenci();  //Instance - Örneklem
+
+            ogrenci2.Ad = "İbrahim";
+            ogrenci2.Soyad = "Çakır";
+            ogrenci2.Numara = 155;
+
+            ogrenciler.Add(ogrenci2);
+
+            //ogrenci.Yaz();
+
+            //Ogrenci.Oku();
 
 
         }

@@ -19,7 +19,7 @@ namespace _14_SortedList_QueueList
             //        {"Acik","Clear" },
             //        {"Kapali","Cloudy" },
             //        {"Mahmut",1 },
-            //        {"Kamil",2 },
+            //        {"Kamil",2 }
             //        //{3,"HATA" } // HATA Verir. Key tipleri aynı olmalıdır.
             //    };
 
@@ -67,69 +67,69 @@ namespace _14_SortedList_QueueList
              */
 
 
-            //SortedList<string, string> sozluk = new SortedList<string, string>();
-            //sozluk.Add("mavi", "blue");
-            //sozluk.Add("beyaz", "white");
-            //sozluk.Add("siyah", "black");
-            //sozluk.Add("turuncu", "orange");
+            SortedList<string, string> sozluk = new SortedList<string, string>();
+            sozluk.Add("mavi", "blue");
+            sozluk.Add("beyaz", "white");
+            sozluk.Add("siyah", "black");
+            sozluk.Add("turuncu", "orange");
 
-            //while (true)
-            //{
-            //    Console.WriteLine("1-Arama\n2-Çıkarma\n3-Listeleme\n4-Çıkış\nSeçiminiz:");
-            //    string secim = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("1-Arama\n2-Çıkarma\n3-Listeleme\n4-Çıkış\nSeçiminiz:");
+                string secim = Console.ReadLine();
 
-            //    if (secim == "1") 
-            //    {
-            //        Console.WriteLine("Aranacak kelime:");
-            //        string kelime = Console.ReadLine();
+                if (secim == "1")
+                {
+                    Console.WriteLine("Aranacak kelime:");
+                    string kelime = Console.ReadLine();
 
-            //        if (sozluk.ContainsKey(kelime))
-            //        {
-            //            Console.WriteLine(sozluk[kelime]);
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Sözlük bulunamadı. Eklemek ister misiniz?(E/H)");
-            //            string cevap = Console.ReadLine().ToLower();
-            //            if (cevap == "e")
-            //            {
-            //                Console.WriteLine($"{kelime} kelimesinin ingilizcesini giriniz");
-            //                sozluk[kelime] = Console.ReadLine();
-            //            }
-            //            else
-            //            {
-            //                Console.WriteLine("Sen Bilirsin!!");
-            //            }
+                    if (sozluk.ContainsKey(kelime))
+                    {
+                        Console.WriteLine(sozluk[kelime]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sözlük bulunamadı. Eklemek ister misiniz?(E/H)");
+                        string cevap = Console.ReadLine().ToLower();
+                        if (cevap == "e")
+                        {
+                            Console.WriteLine($"{kelime} kelimesinin ingilizcesini giriniz");
+                            sozluk[kelime] = Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sen Bilirsin!!");
+                        }
 
-            //        }
-            //    }
-            //    else if (secim == "2") 
-            //    {
-            //        Console.WriteLine("Çıkarılacak kelime:");
-            //        string kelime = Console.ReadLine();
-            //        if (sozluk.ContainsKey(kelime))
-            //        {
-            //            sozluk.Remove(kelime);
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Zaten kelime ekli değil!");
-            //        }
-            //    }
-            //    else if (secim == "3") 
-            //    {
-            //        foreach (KeyValuePair<string,string> item in sozluk)
-            //        {
-            //            Console.WriteLine(item.Value+" => "+item.Key);
-            //        }
-            //    }
-            //    else if (secim == "4") 
-            //    {
-            //        break;
-            //    }
-            //    else 
-            //    { Console.WriteLine("Hatalı Seçim!!"); }
-            //}
+                    }
+                }
+                else if (secim == "2")
+                {
+                    Console.WriteLine("Çıkarılacak kelime:");
+                    string kelime = Console.ReadLine();
+                    if (sozluk.ContainsKey(kelime))
+                    {
+                        sozluk.Remove(kelime);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Zaten kelime ekli değil!");
+                    }
+                }
+                else if (secim == "3")
+                {
+                    foreach (KeyValuePair<string, string> item in sozluk)
+                    {
+                        Console.WriteLine(item.Value + " => " + item.Key);
+                    }
+                }
+                else if (secim == "4")
+                {
+                    break;
+                }
+                else
+                { Console.WriteLine("Hatalı Seçim!!"); }
+            }
 
         }
     }

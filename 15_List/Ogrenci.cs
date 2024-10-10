@@ -8,13 +8,19 @@ namespace _15_List
 {
     internal class Ogrenci
     {
-        public int Numara;
-        internal string Ad; 
+        internal string Ad;
+        internal string Soyad;
+        internal int Numara;
 
 
         public void Yaz()
         {
             Console.WriteLine("Hello World");
+        }
+
+        public static void Oku()
+        {
+            Console.WriteLine("Cumhuriyet Çok Yaşa");
         }
     }
 }

@@ -157,7 +157,7 @@ namespace _13_ArrayList_1
 
             #endregion
 
-            // Kullanıcıdan sayı isteyelim Sayı verdiği sürece toplama yapalım sayı yerine çık yazarsa toplama işlemi bitsin sonuc yazdırılsın.
+            // Kullanıcıdan sayı isteyelim Sayı verdiği sürece toplama yapalım sayı yerine "çık" yazarsa toplama işlemi bitsin sonuc yazdırılsın.
 
             int toplam = 0;
             ArrayList arrayList = new ArrayList();

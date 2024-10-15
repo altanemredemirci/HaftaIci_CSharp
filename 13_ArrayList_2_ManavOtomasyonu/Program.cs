@@ -26,6 +26,24 @@
              
              */
 
+
+            
+
+            Console.WriteLine("******** HALE HOŞGELDİNİZ *********");
+
+            Hal.UrunYaz();
+
+            Manav.UrunYaz();
+
+            foreach (var item in Musteri<Meyve>.sepet)
+            {
+                Console.WriteLine(item.Ad);
+                Console.WriteLine(item.Fiyat);
+                Console.WriteLine(item.Stok);
+            }
+
+
+
         }
     }
 }

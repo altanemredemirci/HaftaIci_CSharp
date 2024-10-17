@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace _16_Class_Object_this
+namespace _16_Class_Object_4_This
 {
     internal class Program
     {

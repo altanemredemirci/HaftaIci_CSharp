@@ -77,7 +77,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_Class_Object_5_Construct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_Class_Object_5_Constructor_2", "16_Class_Object_5_Constructor_2\16_Class_Object_5_Constructor_2.csproj", "{92C60CA8-76E9-4D2F-80AD-855E96A4D031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_1_Encapsulation", "17_OOP_1_Encapsulation\17_OOP_1_Encapsulation.csproj", "{63A888F8-53F7-45E7-A6B1-34833F212CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_1_Encapsulation", "17_OOP_1_Encapsulation\17_OOP_1_Encapsulation.csproj", "{63A888F8-53F7-45E7-A6B1-34833F212CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_Restaurant_Otomasyonu", "16_Restaurant_Otomasyonu\16_Restaurant_Otomasyonu.csproj", "{2057A581-5263-4C73-8532-D64779B04457}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +239,10 @@ Global
 		{63A888F8-53F7-45E7-A6B1-34833F212CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63A888F8-53F7-45E7-A6B1-34833F212CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63A888F8-53F7-45E7-A6B1-34833F212CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2057A581-5263-4C73-8532-D64779B04457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2057A581-5263-4C73-8532-D64779B04457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2057A581-5263-4C73-8532-D64779B04457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2057A581-5263-4C73-8532-D64779B04457}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

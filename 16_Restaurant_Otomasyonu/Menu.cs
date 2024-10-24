@@ -52,7 +52,7 @@ namespace _16_Restaurant_Otomasyonu
            
 
                
-        public static void MenuYaz()
+        public static Yemek MenuYaz()
         {
             ArrayList menuler = new ArrayList() { Corbalar, Makarnalar, Etler, Baliklar, Salatalar, Icecikler };
             Console.WriteLine("1-Çorbalar\n2-Makarnalar\n3-Etler\n4-Balıklar\n5-Salatalar\n6-İçecekler\nSeçim:");
@@ -63,11 +63,22 @@ namespace _16_Restaurant_Otomasyonu
                 {
                     Console.WriteLine(menu.Id+"-"+menu.Ad+":"+menu.Fiyat);
                 }
+                Console.WriteLine("Seçiminiz:");
+                int secimYemek = Convert.ToInt32(Console.ReadLine());
+                var yemek = ((List<Yemek>)menuler[menuSecim - 1])[secimYemek-1];
+                if (yemek == null)
+                {
+                    Console.WriteLine("Hatalı Yemek Seçimi!!");
+                    return null;
+                }
+                return yemek;
             }
             else
             {
                 Console.WriteLine("Hatalı Menü Seçildi!!");
             }
+
+            return null;
         }
     }
 

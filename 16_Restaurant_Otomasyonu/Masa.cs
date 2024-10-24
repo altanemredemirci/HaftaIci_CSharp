@@ -21,10 +21,13 @@ namespace _16_Restaurant_Otomasyonu
 
         public void Hesapla()
         {
-            foreach (Siparis siparis in Siparisler)
-            {
-                Hesap += siparis.Yemek.Fiyat;
-            }
+            Hesap = Siparisler.Select(siparis=> siparis.Yemek.Fiyat).Sum();
+
+            //Hesap = 0;
+            //foreach (Siparis siparis in Siparisler)
+            //{
+            //    Hesap += siparis.Yemek.Fiyat;
+            //}
         }
 
         public static List<Masa> Masalar = new List<Masa>()

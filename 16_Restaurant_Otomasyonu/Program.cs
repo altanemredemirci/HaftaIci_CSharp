@@ -2,8 +2,6 @@
 {
     internal class Program
     {
-       
-
         static void Main(string[] args)
         {
             Console.WriteLine("*********** KARDEŞLER ET LOKANTASINA ***********");
@@ -26,12 +24,46 @@
                         Console.WriteLine("Bütün masalar dolu!!");
                         continue;
                     }
-                    Menu.MenuYaz();
-                    Console.WriteLine("Seçiminiz:");
-                    int secimYemek = Convert.ToInt32(Console.ReadLine());
-                    //Siparişler
+                    int i = 1;
+                    while (i<=kisiSayisi)
+                    {
+
+                        //if (Siparis.SiparisAl(musteriMasa)==false)
+                        if (!Siparis.SiparisAl(musteriMasa))
+                        {
+                            i += 1;
+                        }
+                        Console.Clear();
+                    }
+                    
                 }
-                else if (secim == "2") { }
+                else if (secim == "2") 
+                {
+                    foreach (Masa masa in Masa.Masalar)
+                    {
+                        Console.WriteLine(masa.No+".Masa:"+masa.Hesap);
+                    }
+                    Console.WriteLine("Masa Numarası:");
+                    int masaSecim = Convert.ToInt32(Console.ReadLine());
+
+                    Masa musteriMasasi = Masa.Masalar.FirstOrDefault(i => i.No == masaSecim && i.Hesap>0);
+                    if (musteriMasasi != null)
+                    {
+                        Console.WriteLine("Ödeme:"+musteriMasasi.Hesap+"Lira");
+                        Console.WriteLine("Ödendi Mi? E/H");
+                        string odeme = Console.ReadLine().ToUpper();
+                        if (odeme == "E")
+                        {
+                            musteriMasasi.Hesap = 0;
+                            musteriMasasi.Durum = false;
+                            musteriMasasi.Siparisler.Clear();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hesap Ödenmedi. Bulaşığa geçiniz.");
+                        }
+                    }
+                }
                 else if (secim == "3") 
                 {
                     Console.WriteLine("Program Kapanıyor...");

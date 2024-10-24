@@ -17,8 +17,6 @@
             2-Inheritance - Kalıtım
             3-Polymorphism - Çok Biçimlilik
             4-Abstraction - Soyutlama
-           
-           
            */
 
             /* 

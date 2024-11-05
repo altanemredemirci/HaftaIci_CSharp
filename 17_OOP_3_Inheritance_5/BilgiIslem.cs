@@ -10,11 +10,11 @@ namespace _17_OOP_3_Inheritance_5
     {
         public int ProgramSayisi { get; set; }
 
-        internal new void Kayit()
-        {
-            base.Kayit();
-            Console.WriteLine("Program Sayısı:");
-            this.ProgramSayisi = Convert.ToInt32(Console.ReadLine());
-        }
+        //internal new void Kayit()
+        //{
+        //    base.Kayit();
+        //    Console.WriteLine("Program Sayısı:");
+        //    this.ProgramSayisi = Convert.ToInt32(Console.ReadLine());
+        //}
     }
 }

@@ -10,11 +10,11 @@ namespace _17_OOP_3_Inheritance_5
     {
         public int TeklifSayisi { get; set; }
        
-        internal new void Kayit()
-        {
-            base.Kayit();
-            Console.WriteLine("Teklif Sayısı:");
-            this.TeklifSayisi = Convert.ToInt32(Console.ReadLine());
-        }
+        //internal new void Kayit()
+        //{
+        //    base.Kayit();
+        //    Console.WriteLine("Teklif Sayısı:");
+        //    this.TeklifSayisi = Convert.ToInt32(Console.ReadLine());
+        //}
     }
 }

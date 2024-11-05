@@ -10,11 +10,11 @@ namespace _17_OOP_3_Inheritance_5
     {
         public int HesapSayisi { get; set; }
 
-        internal new void Kayit()
-        {
-            base.Kayit();
-            Console.WriteLine("Hesap Sayısı:");
-            this.HesapSayisi = Convert.ToInt32(Console.ReadLine());
-        }
+        //internal new void Kayit()
+        //{
+        //    base.Kayit();
+        //    Console.WriteLine("Hesap Sayısı:");
+        //    this.HesapSayisi = Convert.ToInt32(Console.ReadLine());
+        //}
     }
 }

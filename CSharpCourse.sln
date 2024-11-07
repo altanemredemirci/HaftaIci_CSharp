@@ -85,13 +85,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_2_Encapsulation", "1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_3_Inheritance", "17_OOP_3_Inheritance\17_OOP_3_Inheritance.csproj", "{B6477266-6F41-413E-9B17-18F966E2716F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_3_Inheritance_2", "17_OOP_3_Inheritance_2\17_OOP_3_Inheritance_2.csproj", "{BAA73418-3413-44E5-818C-8B5AA763EDB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_3_Inheritance_2", "17_OOP_3_Inheritance_2\17_OOP_3_Inheritance_2.csproj", "{BAA73418-3413-44E5-818C-8B5AA763EDB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_3_Inheritance_3", "17_OOP_3_Inheritance_3\17_OOP_3_Inheritance_3.csproj", "{5D9FE234-CDE6-4BC3-B2B9-D3B5FB9C6515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_3_Inheritance_3", "17_OOP_3_Inheritance_3\17_OOP_3_Inheritance_3.csproj", "{5D9FE234-CDE6-4BC3-B2B9-D3B5FB9C6515}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_3_Inheritance_4_NameHiding", "17_OOP_3_Inheritance_4_NameHiding\17_OOP_3_Inheritance_4_NameHiding.csproj", "{B863B7D3-E659-4264-BB04-9236A14479D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_3_Inheritance_4_NameHiding", "17_OOP_3_Inheritance_4_NameHiding\17_OOP_3_Inheritance_4_NameHiding.csproj", "{B863B7D3-E659-4264-BB04-9236A14479D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_3_Inheritance_5", "17_OOP_3_Inheritance_5\17_OOP_3_Inheritance_5.csproj", "{69F9F2CF-5929-413D-AE82-518CE45826BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_OOP_3_Inheritance_5", "17_OOP_3_Inheritance_5\17_OOP_3_Inheritance_5.csproj", "{69F9F2CF-5929-413D-AE82-518CE45826BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_4_Polymorphism", "17_OOP_4_Polymorphism\17_OOP_4_Polymorphism.csproj", "{EE4A28C1-B607-4E14-A85E-DCE9595C9043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_4_Polymorphism_2", "17_OOP_4_Polymorphism_2\17_OOP_4_Polymorphism_2.csproj", "{29C13E13-D12D-408B-8CFF-91B74849C620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_OOP_4_Polymorphism_3", "17_OOP_4_Polymorphism_3\17_OOP_4_Polymorphism_3.csproj", "{1D70F2D9-B8D1-4E62-BEC0-D220FBF370A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,6 +285,18 @@ Global
 		{69F9F2CF-5929-413D-AE82-518CE45826BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F9F2CF-5929-413D-AE82-518CE45826BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F9F2CF-5929-413D-AE82-518CE45826BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4A28C1-B607-4E14-A85E-DCE9595C9043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4A28C1-B607-4E14-A85E-DCE9595C9043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4A28C1-B607-4E14-A85E-DCE9595C9043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4A28C1-B607-4E14-A85E-DCE9595C9043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C13E13-D12D-408B-8CFF-91B74849C620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C13E13-D12D-408B-8CFF-91B74849C620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C13E13-D12D-408B-8CFF-91B74849C620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C13E13-D12D-408B-8CFF-91B74849C620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D70F2D9-B8D1-4E62-BEC0-D220FBF370A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D70F2D9-B8D1-4E62-BEC0-D220FBF370A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D70F2D9-B8D1-4E62-BEC0-D220FBF370A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D70F2D9-B8D1-4E62-BEC0-D220FBF370A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

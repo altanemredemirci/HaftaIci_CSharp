@@ -22,8 +22,8 @@
             //MUH => TC,Ad,Soyad,Adres,HesapSayisi
             //IT  => TC,Ad,Soyad,Adres,ProgramSayisi
 
-            IK ik = new IK();
-            ik.Y
+            //IK ik = new IK();
+            //ik.Y
         }
     }
 

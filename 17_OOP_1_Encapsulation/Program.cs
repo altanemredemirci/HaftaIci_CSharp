@@ -37,6 +37,9 @@
             vatandas._TC = 12345678907;
             Console.WriteLine(vatandas._TC);
 
+
+           
+
         }
     }
 
@@ -60,5 +63,15 @@
                 }
             }
         }
+    }
+
+    class A
+    {
+        public A()
+        {
+            Console.WriteLine("ctor çalıştı.");
+        }
+
+       
     }
 }

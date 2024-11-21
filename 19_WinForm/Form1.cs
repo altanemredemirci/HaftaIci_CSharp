@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace _19_WinForm
 {
     public partial class Form1 : Form
@@ -40,6 +42,13 @@ namespace _19_WinForm
         private void btn_visible_MouseLeave(object sender, EventArgs e)
         {
             sifreGoster();
+        }
+
+        private void lnk_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Register register = new Register();
+            register.Show();
         }
     }
 }

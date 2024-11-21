@@ -12,6 +12,13 @@ namespace _19_WinForm
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+            /**** ORM (Object Relational Mapping) ****
+             * Yazýlým C# - Veritabaný SQL arasýnda iletiþim kurmak için kullanýlan frameworklere ORM denir.
+             * .Net 
+             
+             */
+
         }
     }
 }

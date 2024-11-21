@@ -37,6 +37,7 @@
             pictureBox1 = new PictureBox();
             groupBox1 = new GroupBox();
             btn_visible = new Button();
+            lnk_register = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -103,6 +104,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lnk_register);
             groupBox1.Controls.Add(btn_visible);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(label1);
@@ -130,11 +132,22 @@
             btn_visible.MouseLeave += btn_visible_MouseLeave;
             btn_visible.MouseHover += btn_visible_MouseHover;
             // 
+            // lnk_register
+            // 
+            lnk_register.AutoSize = true;
+            lnk_register.Location = new Point(20, 144);
+            lnk_register.Name = "lnk_register";
+            lnk_register.Size = new Size(48, 15);
+            lnk_register.TabIndex = 7;
+            lnk_register.TabStop = true;
+            lnk_register.Text = "Kayıt Ol";
+            lnk_register.LinkClicked += lnk_register_LinkClicked;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 316);
+            ClientSize = new Size(701, 316);
             Controls.Add(groupBox1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -155,5 +168,6 @@
         private PictureBox pictureBox1;
         private GroupBox groupBox1;
         private Button btn_visible;
+        private LinkLabel lnk_register;
     }
 }
